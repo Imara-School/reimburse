@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "imara-expense-streamlit",
+  "private_key_id": "e2c34e49ae33ce97cd321b8da1f8061c1a01d352",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCVo6hiI/rX1MJl\n8LyKN8SsJgT1gLR7tZD6N+aHiF+ZyWU93E4zNYEAcfpNl/wsA44qB54Nf8/0REnE\nnb4KVZm70KE5EEZ/onSjTsgOoME6nudMeREXlnDFe245h5bxPUfDLV3ovwr9EDi1\nwlqo1Rb0y33p5ZYbf0zxpYJqJR7Cd01HSd9l+GUBtQ0tNCbjmWd4dmHVfFfL6JT9\n918LQ6HaMUggjcazCrZPYzg1EpK0c6KGds1r76sEK5GF/YbtIVHQ9yPr5fUpNqLP\nmENmiY2waofFvjxOOS8P4B035YR0ngSx7oug0UT4lnFh2CrfbOyyfqPMx9hsbgvS\nv1s2iKCZAgMBAAECggEAJbGKfmI60zhUWbJpA9YldAnFsQPhMtJbOTRwnQ5kqov5\nNTpz9mFRZAfR+c7BpmKk4oB1t0fNXeX/wQfNMbQ7W/yjSAkKASeugt6a9VhYJEiX\n0gMjI5JxSMWdT9+QTadWltssLy9EeNenuV1CUgoPVM2Xo54CEF4iRzKeZdeA5pId\nJQyMnvwANcMqEeA8NWenrjHj5X69t7ZKRVS9jwC+54dhmMyjvOxEGDwkpyzmycAb\nTjGlfwO1s2qAOg2XzQh6XNIWs3tH9LzYuTEnxg2k2uifapt/Zth8Bz/y2L8LJFCv\nYhrJA3sqwG51tRVJzNfNj1+5rZ1sMNfRLiYUW9YRCwKBgQDHkQWfuu5kUnFhv6ZX\nRQvBPm3F/ZVWC4F25ISeDByTJ0af2XdBLPPOi84ie5iUxSC3p25IZmHQ51nLWDvt\ntLteGZ2lQ634fPNjcH0rodPvxFHedG1V39Kn5IeyI/GM/3nZ09sc/sDkMkIqlpM3\npo3vasFImuc0uQxTyPRfnaeNDwKBgQC/9FDEoj6fiy5diud+0S22gvR4ptHv41cf\nSKjeK221oRYzEl4iEVAOhDFyALE8nMnlMt2hsSM+osRloVtwiQn3E54y60WeZ5Gq\n+aD7cvb3KkfIWgZNgoHefIyLSoJHENf4TUhtEgnUlKgPQSOsbBL4jDz2v+nuZwBF\ngrizIi5H1wKBgD1XJhNiscPEU3VoIwjQADz1o2gn+a7o+nJA60JpFp9kgyC/BxjR\naF8kOcf/lXak4NmSbSNz1L0RX1hRVppJ4w2ZcgtKMj8eqPD3soGmzC32efOWdcTf\ndzCD3fGzepuMKzf5FnBjHYcGq6/LeJSybQ4aEi7u7gIWnuNh8Tsyij2hAoGADnLQ\nZYyk1BOA4O+kryoFm9hNmItOABWHqEYq19ZDAsnmRt/aEAxnj0AqDJ+6t4pBtCvY\n/OO9eGh+CfxUSqs2AdALN1/4NI0tLMZvdJ3Zsw8OqikEkm8BYYLUfWOVXM4Kw5jl\nm7gg30x1Pfi0O7VC1EySBiy56gT8wz6ssmcfPq8CgYAvwkLDeIsr+h7bf/rZDu1Z\nrRFF5D0wnk27DkVgsAIRfZjB0twmYKd+axWHr1NVI9G5sZxoxrbd8F+4vCGoSOKA\n5V2s7ttCGGAi7tP+r43yo4JjN3+zigXStbU9zYE3EFsPtBFaj5gL86Ih2ME3Z7Lf\ngCnKe0pzMGU5XrgeUbazmw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "imara-expense-reimbursement@imara-expense-streamlit.iam.gserviceaccount.com",
+  "client_id": "116147779988569475046",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/imara-expense-reimbursement%40imara-expense-streamlit.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
