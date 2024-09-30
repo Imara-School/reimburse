@@ -8,6 +8,7 @@ from google.oauth2 import service_account
 
 # Google Sheets API setup
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
 # Load the JSON string from the environment variable
 creds_json = os.getenv("GOOGLE_CREDENTIALS")
 
