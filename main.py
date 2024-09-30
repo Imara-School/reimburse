@@ -1,14 +1,12 @@
 import streamlit as st
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import pandas as pd
-import os
 import json
+import pandas as pd
 from google.oauth2.service_account import Credentials
-
 
 # Google Sheets API setup
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+
 # Load credentials from Streamlit secrets
 creds_json = st.secrets["GOOGLE_SHEET_CREDENTIALS"]
 creds = Credentials.from_service_account_info(json.loads(creds_json))
@@ -29,7 +27,7 @@ st.set_page_config(page_title="Imara Expense Reimbursement", page_icon="🧾")
 # Page Layout
 st.sidebar.image("icon.jpg", use_column_width=True)  # Add your image path here
 st.sidebar.title("Pages: ")
-page = st.sidebar.radio("Go to", ["Submitted Requests", "Approved Requests", "Not Approved Requests", "Paid Requests", "All Records"], index=0) 
+page = st.sidebar.radio("Go to", ["Submitted Requests", "Approved Requests", "Not Approved Requests", "Paid Requests", "All Records"], index=0)
 
 # Initialize session state for data and refresh flag
 if 'data' not in st.session_state:
@@ -48,6 +46,7 @@ def create_proof_links(proof_links):
     for i, link in enumerate(links):
         proof_html += f'<a href="{link.strip()}" target="_blank">View Proof {i + 1}</a> '
     return proof_html
+
 
 #page of submitted reuests
 # Page of submitted requests
