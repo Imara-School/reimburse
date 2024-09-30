@@ -2,21 +2,10 @@ import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
-import os
-import json
-from google.oauth2 import service_account
 
 # Google Sheets API setup
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-
-# Load the JSON string from the environment variable
-creds_json = os.getenv("GOOGLE_CREDENTIALS")
-
-# Parse the JSON string into a dictionary
-creds_dict = json.loads(creds_json)
-
-# Use the credentials dict to create the credentials object
-creds = service_account.Credentials.from_service_account_info(creds_dict, scopes=scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name("imara-expense-streamlit-c69da96cb7bd.json", scope)
 client = gspread.authorize(creds)
 
 # Access the Google Sheet
