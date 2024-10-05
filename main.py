@@ -11,7 +11,7 @@ custom_css = """
 <style>
     /* Customize buttons */
     .stButton button {
-        background-color: #FF4B4B;
+        background-color: #E8E9E8;
         color: white;
     }
 
