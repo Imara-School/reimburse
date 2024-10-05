@@ -111,6 +111,12 @@ def display_requests(filtered_data, status):
         
         with st.container():
             proof_links = create_proof_links(row.get('Attach all receipts (only PDF or Image format is allowed)', ''))
+            
+            # Conditionally display "Changer Name" only if status is not 'Submitted'
+            changer_name_html = ""
+            if status != "Submitted":
+                changer_name_html = f'<p><strong>Changer Name:</strong> {row.get("Changer Name", "N/A")}</p>'
+
             st.markdown(f"""
             <div class="stContainer">
                 <h4>Request ID: {row['Request ID']}</h4>
@@ -119,10 +125,11 @@ def display_requests(filtered_data, status):
                 <p><strong>Amount:</strong> Rs. {row['Total amount requested?']}</p>
                 <p><strong>Timestamp:</strong> {row['Timestamp']}</p>
                 <p><strong>Status:</strong> {row['Status']}</p>
-                <p><strong>Changer Name:</strong> {row.get('Changer Name', 'N/A')}</p>
+                {changer_name_html}  <!-- Inserted only if the status is not 'Submitted' -->
                 <p><strong>Attached proof:</strong> {proof_links}</p>
             </div>
             """, unsafe_allow_html=True)
+
         if status != 'Paid':
             if st.button(f"Update Status for {row['Request ID']}", key=update_key):
                 st.session_state.selected_request_id = row['Request ID']
@@ -130,6 +137,7 @@ def display_requests(filtered_data, status):
             
             if st.session_state.get("update_mode") and st.session_state.get("selected_request_id") == row['Request ID']:
                 handle_status_update(row, index)
+
 
 # Function to handle status updates
 def handle_status_update(row, index):
