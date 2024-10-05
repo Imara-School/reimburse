@@ -3,6 +3,42 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import pandas as pd
 
+# Set the page title and favicon (must be at the top of the script)
+st.set_page_config(page_title="Imara Expense Reimbursement", page_icon="🧾")
+
+# Custom CSS styles
+custom_css = """
+<style>
+    /* Customize buttons */
+    .stButton button {
+        background-color: #FF4B4B;
+        color: white;
+    }
+
+    /* Customize containers (like cards) */
+    .stContainer {
+        border: 1px solid #dddddd;
+        background-color: #F0F2F6;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Customize headers */
+    h4 {
+        color: #FF4B4B;
+    }
+
+    /* Customize other text */
+    p {
+        color: #000000;
+    }
+</style>
+"""
+
+# Inject the CSS styles
+st.markdown(custom_css, unsafe_allow_html=True)
+
 # Load Google Sheets API setup from Streamlit secrets
 secrets = st.secrets["gcp"]
 creds_dict = {
@@ -38,13 +74,10 @@ def load_data():
         ])
     return pd.DataFrame(records)
 
-# Set the page title and favicon
-st.set_page_config(page_title="Imara Expense Reimbursement", page_icon="🧾")
-
 # Page Layout
 st.sidebar.image("icon.jpg", use_column_width=True)  # Add your image path here
 st.sidebar.title("Pages: ")
-page = st.sidebar.radio("Go to", ["Submitted Requests", "Approved Requests", "Not Approved Requests", "Paid Requests", "All Records"], index=0) 
+page = st.sidebar.radio("Go to", ["Submitted Requests", "Approved Requests", "Not Approved Requests", "Paid Requests", "All Records"], index=0)
 
 # Initialize session state for data and refresh flag
 if 'data' not in st.session_state:
@@ -55,6 +88,7 @@ if 'selected_request_id' not in st.session_state:
     st.session_state.selected_request_id = None
 if 'update_mode' not in st.session_state:
     st.session_state.update_mode = False
+
 
 # Function to create proof links
 def create_proof_links(proof_links):
@@ -78,7 +112,7 @@ def display_requests(filtered_data, status):
         with st.container():
             proof_links = create_proof_links(row.get('Attach all receipts (only PDF or Image format is allowed)', ''))
             st.markdown(f"""
-            <div style="border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin-bottom: 15px; background-color: #010203;">
+            <div class="stContainer">
                 <h4>Request ID: {row['Request ID']}</h4>
                 <p><strong>Email Address:</strong> {row['Your Email']}</p>
                 <p><strong>Purpose of Request:</strong> {row['What is this request for?']}</p>
