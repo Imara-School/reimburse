@@ -68,7 +68,7 @@ def load_data():
     if not records:
         # If the sheet is empty, return an empty DataFrame with expected columns
         return pd.DataFrame(columns=[
-            'Timestamp', 'Request ID', 'Your Email', 'What is this request for?',
+            'Timestamp', 'Request ID', 'Your Email', 'What items were purchased and for what purpose?',
             'Total amount requested?', 'Attach all receipts (only PDF or Image format is allowed)',
             'Status', 'Changer Name', 'Reason', 'Previous Status'
         ])
@@ -115,7 +115,7 @@ def display_requests(filtered_data, status):
             <div class="stContainer">
                 <h4>Request ID: {row['Request ID']}</h4>
                 <p><strong>Email Address:</strong> {row['Your Email']}</p>
-                <p><strong>Purpose of Request:</strong> {row['What is this request for?']}</p>
+                <p><strong>Purpose of Request:</strong> {row['What items were purchased and for what purpose?']}</p>
                 <p><strong>Amount:</strong> Rs. {row['Total amount requested?']}</p>
                 <p><strong>Timestamp:</strong> {row['Timestamp']}</p>
                 <p><strong>Status:</strong> {row['Status']}</p>
@@ -208,7 +208,7 @@ else:
         columns_to_display = {
             "Timestamp": "Timestamp",
             "Request ID": "Request ID",
-            "What is this request for?": "Requested For",
+            "What items were purchased and for what purpose?": "Requested For",
             "Your Email": "Requester Mail",
             "Total amount requested?": "Amount Rs.",
             "Status": "Current Status",
