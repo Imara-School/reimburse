@@ -150,7 +150,7 @@ def handle_status_update(row, index):
         if current_status == 'Submitted':
             new_status_options = ["Approved", "Not Approved"]
         elif current_status == 'Approved':
-            new_status_options = ["Paid"]
+            new_status_options = ["Paid", "Not Approved"]
         elif current_status == 'Not Approved':
             new_status_options = ["Approved"]
         else:
