@@ -75,7 +75,7 @@ def load_data():
     return pd.DataFrame(records)
 
 # Page Layout
-st.sidebar.image("icon.jpg", use_column_width=True)  # Add your image path here
+st.sidebar.image("icon.jpg", use_container_width=True)  # Add your image path here
 st.sidebar.title("Pages: ")
 page = st.sidebar.radio("Go to", ["Submitted Requests", "Approved Requests", "Not Approved Requests", "Paid Requests", "All Records"], index=0)
 
