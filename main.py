@@ -72,7 +72,18 @@ def load_data():
             'Total amount requested?', 'Attach all receipts (only PDF or Image format is allowed)',
             'Status', 'Changer Name', 'Reason', 'Previous Status'
         ])
-    return pd.DataFrame(records)
+    
+    # Create a DataFrame
+    data = pd.DataFrame(records)
+    
+    # Parse 'Timestamp' to datetime and handle parsing errors
+    data['Timestamp'] = pd.to_datetime(data['Timestamp'], format='%m/%d/%Y %H:%M:%S', errors='coerce')
+    
+    # Sort data by 'Timestamp' in descending order (most recent first)
+    data = data.sort_values(by='Timestamp', ascending=False)
+    
+    return data
+
 
 # Page Layout
 st.sidebar.image("icon.jpg", use_container_width=True)  # Add your image path here
